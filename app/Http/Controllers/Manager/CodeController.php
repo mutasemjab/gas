@@ -54,7 +54,7 @@ class CodeController extends Controller
 
         $codes->title = $request->get('title');
         $codes->max_use = $request->get('max_use');
-      
+
         if ($codes->save()) {
             return redirect()->back()->with([
                 'message' => 'codes has been updated'
