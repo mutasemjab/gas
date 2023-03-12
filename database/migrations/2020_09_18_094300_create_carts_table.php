@@ -19,6 +19,7 @@ class CreateCartsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('shop_id')->nullable();
             $table->unsignedBigInteger('order_id')->nullable();
+            $table->unsignedBigInteger('subcategory_id')->nullable();
             $table->integer('quantity');
             $table->boolean('active')->default(true);
 
@@ -29,6 +30,7 @@ class CreateCartsTable extends Migration
             $table->integer('p_offer')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('shop_id')->references('id')->on('shops');
+            $table->foreign('subcategory_id')->references('id')->on('sub_categories');
             $table->timestamps();
         });
     }

@@ -34,7 +34,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Order extends Model
 {
     use HasFactory;
-
+  protected $gaurded=[];
 
     public static $ORDER_CANCELLED_BY_SHOP = -2;
     public static $ORDER_CANCELLED_BY_USER = -1;
@@ -67,7 +67,7 @@ class Order extends Model
 
     public function carts(): HasMany
     {
-        return $this->hasMany(Cart::class);
+        return $this->hasMany(Cart::class,'order_id');
     }
 
     public function coupon()

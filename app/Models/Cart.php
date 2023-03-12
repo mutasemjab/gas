@@ -31,6 +31,12 @@ class Cart extends Model
        return $this->belongsTo(Product::class);
     }
 
+    public function subCategory(): BelongsTo
+    {
+       return $this->belongsTo(SubCategory::class);
+    }
+
+
     public function order(): BelongsTo
     {
         return $this->belongsTo(Order::class);

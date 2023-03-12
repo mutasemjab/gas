@@ -13,7 +13,7 @@ class FCMController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public static function sendMessage($title,$body,$token,$screen="order")
+    public static function sendMessage($title,$body,$token,$screen="order",$data=null)
     {
 
         if(!$token)

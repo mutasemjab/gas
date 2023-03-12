@@ -104,7 +104,9 @@ Route::group(['prefix' => 'v1/user'], function () {
         Route::get('/orders/{id}/reviews', 'Api\v1\User\OrderController@showReviews');
         Route::patch('/orders/{id}', 'Api\v1\User\OrderController@update');
         Route::post('/orders', 'Api\v1\User\OrderController@store');
+        Route::post('/orders/driver', 'Api\v1\User\OrderController@storeDriverOrder');
         Route::patch('/orders/{id}', 'Api\v1\User\OrderController@update');
+        Route::post('/deliveryAssign', 'Api\v1\User\OrderController@deliveryAssign');
 
         //-------------------- Product Review ----------------------//
         Route::post('/product-reviews', 'Api\v1\User\ProductReviewController@store');

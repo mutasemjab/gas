@@ -22,7 +22,9 @@ class SubCategory extends Model
         return $this->belongsTo(Category::class);
     }
 
-  
+    public function carts(){
+        return $this->hasMany(Cart::class);
+    }
 
     public static function activateSubCategory($id): bool
     {

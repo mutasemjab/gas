@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->double('order');
             $table->double('shop_revenue');
             $table->double('admin_revenue');
-            $table->double('tax');
+            // $table->double('tax');
             $table->double('delivery_fee');
             $table->double('total');
             $table->integer('otp');
@@ -31,7 +31,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('delivery_boy_id')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('address_id')->nullable();
-            $table->unsignedBigInteger('shop_id');
+            $table->unsignedBigInteger('shop_id')->nullable();
             $table->unsignedBigInteger('order_payment_id');
             $table->foreign('order_payment_id')->references('id')->on('order_payments');
             $table->foreign('coupon_id')->references('id')->on('coupons');
